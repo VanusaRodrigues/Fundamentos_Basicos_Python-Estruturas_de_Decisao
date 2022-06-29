@@ -1,0 +1,55 @@
+Uma fruteira está vendendo frutas com a seguinte tabela de preços:
+
+              Até 5 Kg           Acima de 5 Kg 
+Morango   RS 2,50 por Kg        RS 2,20 por Kg
+Maçã      RS 1,80 por Kg        RS 1,50 por Kg
+
+
+Se o cliente comprar mais de 8 Kg em frutas ou o valor total da compra ultrapassar RS 25,00, receberá ainda um desconto de 10% sobre este total. 
+Escreva um algoritmo para ler a quantidade (em Kg) de morangos e a quantidade (em Kg) de maças adquiridas e escreva o valor a ser pago pelo cliente.
+
+
+
+kg_morango = int(input('Quantos kilos de morango? '))
+kg_maca = int(input('Quantos kilos de maçã? '))
+
+preco_morango = 0
+preco_maca = 0
+total_morango = 0 
+total_maca = 0 
+total = 0 
+kg_soma = 0 
+desconto = 0 
+
+# Definindo preço do morango:
+# Se <= 5kg:
+if kg_morango <= 5:
+    preco_morango = 2.5
+# Se > 5kg:
+else:
+    preco_morango = 2.2
+# Total a ser pago por morangos:
+total_morango = preco_morango * kg_morango    
+
+# Definindo preço da maçã:
+# Se <= 5kg:
+if kg_maca <= 5:
+    preco_maca = 1.8
+# Se > 5kg:
+else:
+    preco_maca = 1.5
+# Total a ser pago por maçãs:    
+total_maca = preco_maca * kg_maca
+
+# Valor total a ser pago:
+total = total_maca + total_morango
+
+# Somando kg maçã e morango:
+kg_soma = kg_maca + kg_morango
+
+# Se comprados mais que 8kg (de maçãs e morangos) OU se o valor da compra for > R$25,00, tem 10% de desconto:
+if (kg_soma > 8) or (total > 25):
+    desconto = 0.1
+    total = total - (total * desconto)
+
+print(f'\nQuantidade de morangos: {kg_morango}Kg \nQuantidade de maçãs: {kg_maca}Kg \nValor: R$ {total:.2f}')
