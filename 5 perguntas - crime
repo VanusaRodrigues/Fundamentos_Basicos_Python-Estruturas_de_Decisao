@@ -1,0 +1,40 @@
+Faça um programa que faça 5 perguntas para uma pessoa sobre um crime. As perguntas são:
+a. "Telefonou para a vítima?"
+b. "Esteve no local do crime?"
+c. "Mora perto da vítima?"
+d. "Devia para a vítima?"
+e. "Já trabalhou com a vítima?"
+O programa deve no final emitir uma classificação sobre a participação da pessoa no crime. 
+Se a pessoa responder positivamente a 2 questões ela deve ser classificada como "Suspeita", entre 3 e 4 como "Cúmplice" e 5 como "Assassino". Caso contrário, ele será classificado como "Inocente".
+
+
+
+print('Para as questões abaixo responda: 1 para sim / 0 para não')
+p1 = input('Telefonou para a vítima? ')
+p2 = input('Esteve no local do crime? ')
+p3 = input('Mora perto da vítima? ')
+p4 = input('Devia para a vítima? ')
+p5 = input('Já trabalhou com a vítima? ')
+
+# Transformando 0 e 1 das respostas em int
+p1 = int(p1)
+p2 = int(p2)
+p3 = int(p3)
+p4 = int(p4)
+p5 = int(p5)
+
+# Testando validade das entradas:
+if (p1 != 0 and p1 != 1) or (p2 != 0 and p2 != 1) or (p3 != 0 and p3 != 1) or (p4 != 0 and p4 != 1) or (p5 != 0 and p5 != 1):
+    print('Uma ou mais questões foram respondidas erradas. Volte e responda-as novamente, escolhendo 1 para sim e 0 para não.')
+# Se soma das respostas = 2    
+elif (p1 + p2 + p3 + p4 + p5 == 2):
+    print('Suspeito')
+# Se soma das respostas = 3 ou 4  
+elif (p1 + p2 + p3 + p4 + p5 == 3) or (p1 + p2 + p3 + p4 + p5 == 4):
+    print('Cúmplice')
+# Se soma das respostas = 5      
+elif (p1 + p2 + p3 + p4 + p5 == 5):
+    print('Assassino')
+# Se soma das respostas = 0 ou 1     
+else:
+    print('Inocente')
